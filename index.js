@@ -18,10 +18,11 @@ const run = async () => {
 
     const { data } = await octokit.request(`GET /repos/${repo.owner}/${repo.repo}/actions/runs/${run_id}/attempts/${run_attempt}/jobs`);
     const jobIdList = []
-    process.env.CURRENT_JOB_ID_INDEX += 1;
+    process.env.CURRENT_JOB_ID_INDEX ? process.env.CURRENT_JOB_ID_INDEX = 0 : process.env.CURRENT_JOB_ID_INDEX += 1;
     for (let job of data.jobs) {
       jobIdList.push(job.id)
     }
+    console.log(process.env.CURRENT_JOB_ID_INDEX)
     console.log(jobIdList[process.env.CURRENT_JOB_ID_INDEX])
 
 
