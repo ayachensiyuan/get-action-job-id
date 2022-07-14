@@ -6,8 +6,9 @@ const run = async () => {
   try {
     const run_id = core.getInput('run-id');
     console.log(run_id);
-    const {payload} = github.context
-    console.log(payload);
+    console.log(github.owner);
+    console.log(github.repo);
+    console.log(github.attempt_number);
 
   
   
