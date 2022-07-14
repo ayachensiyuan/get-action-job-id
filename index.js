@@ -21,8 +21,8 @@ const run = async () => {
     for(let job of data.jobs) {
       jobIdList.push(job.id)
       console.log(job)
-      console.log(job.id)
     }
+    conssole.log(jobIdList)
 
 
   } catch (error) {
