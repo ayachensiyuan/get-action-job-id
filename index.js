@@ -22,7 +22,7 @@ const run = async () => {
       jobIdList.push(job.id)
       console.log(job)
     }
-    conssole.log(jobIdList)
+    console.log(jobIdList)
 
 
   } catch (error) {
