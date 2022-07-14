@@ -6,11 +6,11 @@ const run = async () => {
   try {
     const run_id = core.getInput('run-id');
     console.log(run_id);
-    const github = github.context;
+    const context = github.context;
 
-    console.log(github.owner);
-    console.log(github.repo);
-    console.log(github.attempt_number);
+    console.log(context.owner);
+    console.log(context.repo);
+    console.log(context.attempt_number);
 
   
   
