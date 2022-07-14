@@ -17,11 +17,14 @@ const run = async () => {
     });
 
     const { data } = await octokit.request(`GET /repos/${repo.owner}/${repo.repo}/actions/runs/${run_id}/attempts/${run_attempt}/jobs`);
-    const jobIdList = []
+
     for (let job of data.jobs) {
-      jobIdList.push(job.id)
+      if (github.context.job == job.name) {
+        console.log(job.id)
+
+      }
+
     }
-    console.log(github.context.job)
 
 
   } catch (error) {
