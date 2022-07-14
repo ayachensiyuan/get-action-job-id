@@ -6,17 +6,14 @@ const run = async () => {
   try {
     const run_id = core.getInput('run-id');
     console.log(run_id);
-    const context = github.context;
+    const {repo} = github.context;
 
-    console.log(context.owner);
-    console.log(context.repo);
-    console.log(context.attempt_number);
 
   
   
-  //  const { response } = await octokit.request(`GET /repos/${owner}/${repo}/actions/runs/${run_id}/attempts/${attempt_number}/jobs`);
+    const { response } = await octokit.request(`GET /repos/${repo.owner}/${repo.repo}/actions/runs/${run_id}/attempts/${1}/jobs`);
   
-    //console.log(response)
+    console.log(response)
   
   
   } catch (error) {
