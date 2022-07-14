@@ -8,7 +8,7 @@ inputs:
     description: 'run attempt'
     required: true
 outputs:
-  id: # id of output
+  jobId: # id of output
     description: 'job-id'
   
 
