@@ -21,7 +21,7 @@ const run = async () => {
     for (let job of data.jobs) {
       jobIdList.push(job.id)
     }
-    console.log(github.context)
+    console.log(github.context.action)
 
 
   } catch (error) {
