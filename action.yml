@@ -4,9 +4,6 @@ inputs:
   run-id:  
     description: 'action run id'
     required: true
-  repo-token:
-    description: 'access_token'
-    required: true
 outputs:
   job-id: # id of output
     description: 'job-id'
