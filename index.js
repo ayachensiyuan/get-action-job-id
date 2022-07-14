@@ -21,10 +21,13 @@ const run = async () => {
     for (let job of data.jobs) {
       console.log(github.context.job)
       console.log(job.name)
+      let target = ''
       if (github.context.job == job.name) {
         console.log(job.id)
-        core.setOutput('jobId', job.id)
+        target = job.id
       }
+      
+      core.setOutput('jobId', JSON.stringify(target))
 
     }
 
