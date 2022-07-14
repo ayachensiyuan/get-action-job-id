@@ -1,13 +1,12 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'get action job id'
+description: 'get action job id'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  run-id:  
+    description: 'action run id'
     required: true
-    default: 'World'
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  job-id: # id of output
+    description: 'job-id'
 runs:
   using: 'node16'
   main: 'index.js'
