@@ -4,6 +4,9 @@ inputs:
   run-id:  
     description: 'action run id'
     required: true
+  run-attempt:
+    description: 'run attempt'
+    required: true
 outputs:
   job-id: # id of output
     description: 'job-id'
