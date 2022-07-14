@@ -19,6 +19,8 @@ const run = async () => {
     const { data } = await octokit.request(`GET /repos/${repo.owner}/${repo.repo}/actions/runs/${run_id}/attempts/${run_attempt}/jobs`);
 
     for (let job of data.jobs) {
+      console.log(github.context.job)
+      console.log(job.name)
       if (github.context.job == job.name) {
         console.log(job.id)
         core.setOutput('jobId', job.id)
