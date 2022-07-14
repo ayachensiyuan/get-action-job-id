@@ -15,9 +15,11 @@ const run = async () => {
       auth: authentication.token
     });
 
-    const  response  = await octokit.request(`GET /repos/${repo.owner}/${repo.repo}/actions/runs/${run_id}/attempts/${1}/jobs`);
+    const  {data}  = await octokit.request(`GET /repos/${repo.owner}/${repo.repo}/actions/runs/${run_id}/attempts/${1}/jobs`);
+    for(let job of data.jobs) {
 
-    console.log(response)
+      console.log(job)
+    }
 
 
   } catch (error) {
