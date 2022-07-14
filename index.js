@@ -16,13 +16,13 @@ const run = async () => {
       auth: authentication.token
     });
 
-    const  {data}  = await octokit.request(`GET /repos/${repo.owner}/${repo.repo}/actions/runs/${run_id}/attempts/${run_attempt}/jobs`);
+    const { data } = await octokit.request(`GET /repos/${repo.owner}/${repo.repo}/actions/runs/${run_id}/attempts/${run_attempt}/jobs`);
     const jobIdList = []
-    for(let job of data.jobs) {
+    process.env.CURRENT_JOB_ID_INDEX += 1;
+    for (let job of data.jobs) {
       jobIdList.push(job.id)
-      console.log(job)
     }
-    console.log(jobIdList)
+    console.log(jobIdList[process.env.CURRENT_JOB_ID_INDEX])
 
 
   } catch (error) {
