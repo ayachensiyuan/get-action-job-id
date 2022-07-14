@@ -20,7 +20,7 @@ const run = async () => {
 
     for (let job of data.jobs) {
       if (github.context.job == job.name) {
-        core.setOutput('job-id', job.id)
+        core.setOutput('id', job.id)
       }
 
     }
