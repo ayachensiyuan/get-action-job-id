@@ -1,7 +1,7 @@
 name: get job id run test
 on: 
   push: 
-    branches: [master, dev]
+    branches: [main, dev]
 jobs:
   get-job-id: 
     runs-on: ubuntu-latest
