@@ -21,7 +21,8 @@ const run = async () => {
     
     // find current job id from the list of jobs
     let target = ''
-    console.log(github.context)
+    console.log(run_attempt)
+    console.log(github.context.runNumber)
     // console.log(github)
     // console.log(repo)
     for (let job of data.jobs) {
