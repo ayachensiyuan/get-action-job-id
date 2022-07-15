@@ -15,3 +15,15 @@ jobs:
       # get id     
       - name: get-id1
         run: echo "The current job id is ${{ steps.setId.outputs.jobId }}"
+  get-id2:
+    runs-on: ubuntu-latest
+    name: xxx
+    steps:
+      - uses: 'ayachensiyuan/get-action-job-id@dev'
+        id: setId
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      # get id     
+      - name: get-id1
+        run: echo "The current job id is ${{ steps.setId.outputs.jobId }}"
