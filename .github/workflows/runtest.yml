@@ -9,7 +9,7 @@ env:
 jobs:
   get-id:
     runs-on: ubuntu-latest
-    name: ${{github.env.JOB_NAME}}
+    name: ${{ env.JOB_NAME }}
 
     steps:
       - uses: 'ayachensiyuan/get-action-job-id@dev'
