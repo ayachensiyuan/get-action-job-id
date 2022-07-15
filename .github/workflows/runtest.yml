@@ -3,7 +3,7 @@ on:
   push: 
     branches: [master, dev]
 jobs:
-  set-id:
+  get-id:
     runs-on: ubuntu-latest
     steps:
       - uses: 'ayachensiyuan/get-action-job-id@dev'
