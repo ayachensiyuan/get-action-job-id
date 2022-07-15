@@ -22,6 +22,7 @@ const run = async () => {
     let target = ''
     // console.log(github.context)
     console.log(github)
+    console.log(repo)
     for (let job of data.jobs) {
       console.log('job.id: ',job.id)
       console.log('job.name: ',job.name)
