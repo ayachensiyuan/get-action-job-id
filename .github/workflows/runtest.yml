@@ -1,5 +1,6 @@
 name: get job id run test
-  on: [push]
+  on: 
+    [push]
   jobs:
     set id:
       runs-on: ubuntu-latest
