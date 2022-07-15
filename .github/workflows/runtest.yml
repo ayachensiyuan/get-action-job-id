@@ -5,11 +5,11 @@ on:
 env: 
   JOB_NAME: xxx 
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  
+
 jobs:
   get-id:
     runs-on: ubuntu-latest
-    name: ${{ env.JOB_NAME }}
+    name: xxx
 
     steps:
       - uses: 'ayachensiyuan/get-action-job-id@dev'
