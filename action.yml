@@ -1,9 +1,6 @@
 name: 'get action job id'
 description: 'get action job id'
 inputs:
-  run-id:  
-    description: 'action run id'
-    required: true
   run-attempt:
     description: 'run attempt'
     required: true
@@ -11,7 +8,6 @@ outputs:
   jobId: 
     description: 'job-id'
   
-
 runs:
   using: 'node16'
   main: 'index.js'
