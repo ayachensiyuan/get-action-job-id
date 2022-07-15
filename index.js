@@ -11,7 +11,7 @@ const run = async () => {
     
     const auth = createActionAuth()
     const authentication = await auth()
-    console.log(job_name)
+
     const octokit = new Octokit({
       auth: authentication.token
     })
@@ -23,7 +23,6 @@ const run = async () => {
     
     for (let job of data.jobs) {
       // find current job id from the list of jobs
-      console.log(job)
       if (job_name == job.name) {
         console.log(job.id)
         target = job.id
