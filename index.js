@@ -21,6 +21,8 @@ const run = async () => {
     // find current job id from the list of jobs
     let target = ''
     for (let job of data.jobs) {
+      console.log(job.id)
+      console.log(github.context.job)
       if (github.context.job == job.name) {
         console.log(job.id)
         target = job.id
