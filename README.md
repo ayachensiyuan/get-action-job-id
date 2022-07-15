@@ -18,7 +18,7 @@ Create a workflow `*.yml` file in your repositories `.github/workflows` director
   steps:
   - name: set id
     id: setId
-    uses: ayachensiyuan/get-action-job-id@v1.2
+    uses: ayachensiyuan/get-action-job-id@v1.3
     env: 
     	GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     with:
