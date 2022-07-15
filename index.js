@@ -30,7 +30,7 @@ const run = async () => {
     }
 
     // set id to output
-    core.setOutput('jobId', JSON.stringify(target))
+    core.setOutput('jobId', JSON.stringify(target)) 
 
 
   } catch (error) {
