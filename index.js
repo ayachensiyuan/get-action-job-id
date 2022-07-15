@@ -20,7 +20,8 @@ const run = async () => {
 
     // find current job id from the list of jobs
     let target = ''
-    console.log(github.context)
+    // console.log(github.context)
+    console.log(github)
     for (let job of data.jobs) {
       console.log('job.id: ',job.id)
       console.log('job.name: ',job.name)
