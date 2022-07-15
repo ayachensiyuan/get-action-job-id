@@ -13,7 +13,7 @@ jobs:
       - uses: 'ayachensiyuan/get-action-job-id@dev'
         id: setId
         with: 
-          job-name: ${{ github.env.JOB_NAME }}
+          job-name: ${{ xxx }}
       
       # get id     
       - name: get-id1
