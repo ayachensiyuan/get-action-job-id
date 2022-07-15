@@ -5,9 +5,9 @@ const { createActionAuth } = require("@octokit/auth-action")
 
 const run = async () => {
   try {
-    const run_id = core.getInput('run-id')
+
     const run_attempt = core.getInput('run-attempt')
-    const { repo } = github.context
+    const { repo, runId:run_id  } = github.context
 
     const auth = createActionAuth()
     const authentication = await auth()
