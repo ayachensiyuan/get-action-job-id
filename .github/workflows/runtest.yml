@@ -12,7 +12,7 @@ jobs:
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with: 
-          job-name: 'xxx'
+          job-name: ${{ github.job }}
       
       # get id     
       - name: get-id1
