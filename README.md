@@ -3,6 +3,7 @@
 ---
 
 GitHub official has not provide access to the job id by using existing API. 
+
 This tool could help you to get job id easier. 
 
 # Usage
@@ -13,7 +14,7 @@ This tool could help you to get job id easier.
 
 Create a workflow `*.yml` file in your repositories `.github/workflows` directory.
 
-### Example-1 get single job id
+### Example-1 Get a single job id
 
 ```yaml
 jobs:
@@ -35,7 +36,7 @@ jobs:
 
 
 ```
-### Example-2 get bulk job id
+### Example-2 Get bulk of job-ids
 
 ```yaml
 jobs:
