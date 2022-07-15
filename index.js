@@ -14,7 +14,7 @@ const run = async () => {
       auth: authentication.token
     })
 
-    const { data } = await octokit.request(`/repos/${owner}/${repo}/actions/runs/${run_id}/jobs`)
+    const { data } = await octokit.request(`/repos/${repo.owner}/${repo.repo}/actions/runs/${run_id}/jobs`)
 
     
     // find current job id from the list of jobs
