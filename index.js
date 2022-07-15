@@ -6,10 +6,10 @@ const { createActionAuth } = require("@octokit/auth-action")
 const run = async () => {
   try {
     const { repo, runId:run_id  } = github.context
-
+    const job_name = core.getInput('job-name', { required: true })
     const auth = createActionAuth()
     const authentication = await auth()
-
+    console.log(job_name)
     const octokit = new Octokit({
       auth: authentication.token
     })

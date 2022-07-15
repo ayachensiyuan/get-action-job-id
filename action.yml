@@ -1,5 +1,9 @@
 name: 'get action job id'
 description: 'get action job id'
+inputs:
+  job-name:
+    description: 'job name'
+    required: true
 outputs:
   jobId: 
     description: 'job-id'
