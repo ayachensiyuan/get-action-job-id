@@ -25,7 +25,7 @@ const run = async () => {
     console.log(github)
     console.log(repo)
     for (let job of data.jobs) {
-      const {data} = await octokit.request(`GET /repos/${owner}/${repo}/actions/jobs/${job_id}`)
+      const {data} = await octokit.request(`GET /repos/${repo.owner}/${repo.repo}/actions/jobs/${job_id}`)
       console.log(data)
       // console.log('job.id: ',job.id)
       // console.log('job.name: ',job.name)
