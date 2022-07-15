@@ -5,9 +5,9 @@ on:
 jobs:
   get-id:
     runs-on: ubuntu-latest
+    name: xxx
     steps:
       - uses: 'ayachensiyuan/get-action-job-id@dev'
-        name: xxx
         id: setId
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
