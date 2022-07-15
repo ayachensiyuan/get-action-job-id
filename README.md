@@ -2,7 +2,8 @@
 
 ---
 
-This tool help you to get job id easier. 
+GitHub official has not provide access to the job id by using existing API. 
+This tool could help you to get job id easier. 
 
 # Usage
 
@@ -12,7 +13,7 @@ This tool help you to get job id easier.
 
 Create a workflow `*.yml` file in your repositories `.github/workflows` directory.
 
-### Example
+### Example-1 get single job id
 
 ```yaml
 jobs:
@@ -34,8 +35,31 @@ jobs:
 
 
 ```
+### Example-2 get bulk job id
 
-GitHub official has not provide access to the job id by using exist API. 
+```yaml
+jobs:
+  get-job-id: 
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        cases: ['case1', 'case2', 'case3', 'case4']
+    name: ${{ matrix.cases }} # change SET-A-NEW-NAME
+    steps:
+    - name: set id
+      id: set-job-id
+      uses: ayachensiyuan/get-action-job-id@v1.4
+      env: 
+    	  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        job-name: ${{ matrix.cases }} # same as name
+
+    # get id     
+    - name: get id
+      run: echo "The current job id is ${{ steps.set-job-id.outputs.jobId }}"
+
+```
+
 
 
 

@@ -6,7 +6,6 @@ jobs:
   get-job-id: 
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: false
       matrix:
         cases: ['text1', 'text2', 'text3', 'text4']
     name: ${{matrix.cases}} # change SET-A-NEW-NAME
