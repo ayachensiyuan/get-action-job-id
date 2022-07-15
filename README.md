@@ -20,7 +20,7 @@ Create a workflow `*.yml` file in your repositories `.github/workflows` director
 jobs:
   get-job-id: 
     runs-on: ubuntu-latest
-    name: SET-A-NEW-NAME # change SET-A-NEW-NAME
+    name: 'SET-A-NEW-NAME' # change SET-A-NEW-NAME
     steps:
     - name: set id
       id: set-job-id
@@ -28,7 +28,7 @@ jobs:
       env: 
     	  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        job-name: SET-A-NEW-NAME # same as name
+        job-name: 'SET-A-NEW-NAME' # must be the same as 'get-job-id.name' 
 
     # get id     
     - name: get id
@@ -53,7 +53,7 @@ jobs:
       env: 
     	  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        job-name: ${{ matrix.cases }} 
+        job-name: ${{ matrix.cases }} # must be the same as 'get-job-id.name' 
 
     # get id     
     - name: get id
@@ -61,7 +61,7 @@ jobs:
 
 ```
 
-> Make sure 'name' field value must be the same as 'job-name' field value.
+> ⚠️ Make sure 'name' field value must be the same as 'job-name' field value.
 
 
 
