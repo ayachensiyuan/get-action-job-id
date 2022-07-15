@@ -8,7 +8,7 @@ jobs:
     env: 
       JOB_NAME: xxx 
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    name: ${{ github.env.JOB_NAME }}
+    name: ${{ env.JOB_NAME }}
     steps:
       - uses: 'ayachensiyuan/get-action-job-id@dev'
         id: setId
