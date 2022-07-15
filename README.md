@@ -44,8 +44,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        cases: ['case1', 'case2', 'case3', 'case4']
-    name: ${{ matrix.cases }} # change SET-A-NEW-NAME
+        cases: ['case1', 'case2', 'case3', 'case4'] # matrix cases
+    name: ${{ matrix.cases }} 
     steps:
     - name: set id
       id: set-job-id
@@ -53,7 +53,7 @@ jobs:
       env: 
     	  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        job-name: ${{ matrix.cases }} # same as name
+        job-name: ${{ matrix.cases }} 
 
     # get id     
     - name: get id
@@ -61,7 +61,7 @@ jobs:
 
 ```
 
-> Makesure 'name' field value must be the same as 'job-name' field value.
+> Make sure 'name' field value must be the same as 'job-name' field value.
 
 
 
