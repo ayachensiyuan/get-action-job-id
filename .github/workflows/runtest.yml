@@ -15,5 +15,5 @@ jobs:
           run-attempt: ${{ github.run_attempt }}
       
       # get id     
-      - name: get-id
+      - name: get-id1
         run: echo "The current job id is ${{ steps.setId.outputs.jobId }}"
