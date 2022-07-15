@@ -2,18 +2,19 @@ name: get job id run test
 on: 
   push: 
     branches: [master, dev]
+env: 
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 jobs:
   get-id:
     runs-on: ubuntu-latest
-    name: xxx
+    name: JOB_NAME
+
     steps:
       - uses: 'ayachensiyuan/get-action-job-id@v1.1'
         id: setId
-        env: 
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          run-id: ${{ github.run_id }}
-          run-attempt: ${{ github.run_attempt }}
+        with: 
+          job-name: JOB_NAME
       
       # get id     
       - name: get-id1
