@@ -2,20 +2,19 @@ name: get job id run test
 on: 
   push: 
     branches: [master, dev]
-env: 
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
 jobs:
-  get-id:
+  get-job-id: 
     runs-on: ubuntu-latest
-    name: JOB_NAME
-
+    name: SET-A-NEW-NAME # change SET-A-NEW-NAME
     steps:
-      - uses: 'ayachensiyuan/get-action-job-id@v1.1'
-        id: setId
-        with: 
-          job-name: JOB_NAME
-      
+      - name: set id
+        id: set-job-id
+        uses: ayachensiyuan/get-action-job-id@v1.4
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          job-name: SET-A-NEW-NAME # same as name
+
       # get id     
-      - name: get-id1
-        run: echo "The current job id is ${{ steps.setId.outputs.jobId }}"
+      - name: get id
+        run: echo "The current job id is ${{ steps.set-job-id.outputs.jobId }}"

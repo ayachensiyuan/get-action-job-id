@@ -15,19 +15,22 @@ Create a workflow `*.yml` file in your repositories `.github/workflows` director
 ### Example
 
 ```yaml
-  steps:
-  - name: set id
-    id: setId
-    uses: ayachensiyuan/get-action-job-id@v1.3
-    env: 
-    	GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    with:
-      run-id: ${{ github.run_id }}
-      run-attempt: ${{ github.run_attempt }}
-  
-  # get id     
-  - name: get id
-    run: echo "The current job id is ${{ steps.setId.outputs.jobId }}"
+jobs:
+  get-job-id: 
+    runs-on: ubuntu-latest
+    name: SET-A-NEW-NAME # change SET-A-NEW-NAME
+    steps:
+    - name: set id
+      id: set-job-id
+      uses: ayachensiyuan/get-action-job-id@v1.4
+      env: 
+    	  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        job-name: SET-A-NEW-NAME # same as name
+
+    # get id     
+    - name: get id
+      run: echo "The current job id is ${{ steps.set-job-id.outputs.jobId }}"
 
 
 ```
