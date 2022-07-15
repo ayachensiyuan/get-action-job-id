@@ -61,7 +61,7 @@ jobs:
 
 ```
 
-> ⚠️ Make sure 'name' field value must be the same as 'job-name' field value.
+> ⚠️  Make sure 'name' field value must be the same as 'job-name' field value.
 
 
 
