@@ -1,18 +1,18 @@
 name: get job id run test
-  on: 
-    push: 
-      branches: [master, dev]
-  jobs:
-    set id:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: 'ayachensiyuan/get-action-job-id@dev'
-          env: 
-    	      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          with:
-            run-id: ${{ github.run_id }}
-            run-attempt: ${{ github.run_attempt }}
-        
-        # get id     
-        - name: get id
-          run: echo "The current job id is ${{ steps.setId.outputs.jobId }}"
+on: 
+  push: 
+    branches: [master, dev]
+jobs:
+  set id:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: 'ayachensiyuan/get-action-job-id@dev'
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          run-id: ${{ github.run_id }}
+          run-attempt: ${{ github.run_attempt }}
+      
+      # get id     
+      - name: get id
+        run: echo "The current job id is ${{ steps.setId.outputs.jobId }}"
