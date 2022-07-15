@@ -1,9 +1,5 @@
 name: 'get action job id'
 description: 'get action job id'
-inputs:
-  run-attempt:
-    description: 'run attempt'
-    required: true
 outputs:
   jobId: 
     description: 'job-id'

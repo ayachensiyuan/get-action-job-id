@@ -5,8 +5,6 @@ const { createActionAuth } = require("@octokit/auth-action")
 
 const run = async () => {
   try {
-
-    const run_attempt = core.getInput('run-attempt')
     const { repo, runId:run_id  } = github.context
 
     const auth = createActionAuth()
@@ -16,13 +14,12 @@ const run = async () => {
       auth: authentication.token
     })
 
-    const { data } = await octokit.request(`GET /repos/${repo.owner}/${repo.repo}/actions/runs/${run_id}/attempts/${run_attempt}/jobs`)
+    const { data } = await octokit.request(`/repos/${owner}/${repo}/actions/runs/${run_id}/jobs`)
 
     
     // find current job id from the list of jobs
     let target = ''
-    console.log(run_attempt)
-    console.log(github.context.runNumber)
+
     // console.log(github)
     // console.log(repo)
     for (let job of data.jobs) {
