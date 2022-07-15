@@ -60,7 +60,8 @@ jobs:
       run: echo "The current job id is ${{ steps.set-job-id.outputs.jobId }}"
 
 ```
-> Makesure '''name''' field value must be the same as '''job-name''' field value.
+
+> Makesure 'name' field value must be the same as 'job-name' field value.
 
 
 
