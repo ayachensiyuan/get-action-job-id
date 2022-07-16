@@ -24,7 +24,7 @@ jobs:
     steps:
     - name: set id
       id: set-job-id
-      uses: ayachensiyuan/get-action-job-id@v1.4
+      uses: ayachensiyuan/get-action-job-id@v1.5
       env: 
     	  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
@@ -49,7 +49,7 @@ jobs:
     steps:
     - name: set id
       id: set-job-id
-      uses: ayachensiyuan/get-action-job-id@v1.4
+      uses: ayachensiyuan/get-action-job-id@v1.5
       env: 
     	  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
