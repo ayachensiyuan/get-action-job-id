@@ -49,7 +49,7 @@ jobs:
     steps:
     - name: set id
       id: set-job-id
-      uses: ayachensiyuan/get-action-job-id@v1.5
+      uses: ayachensiyuan/get-action-job-id@main
       env: 
     	  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
@@ -61,7 +61,7 @@ jobs:
 
 ```
  
-> ⚠️  Make sure 'name' field value must be the same as 'job-name' field value.
+> ⚠️  Make sure 'name' field value must be the same as 'job-name' field value. And name must be unique name.
 
 
 
