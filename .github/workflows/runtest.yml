@@ -3,11 +3,11 @@ on:
   push: 
     branches: [main, dev]
 jobs:
-  get-job-id: 
+  get-job-id: # use matrix jobs
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        cases: ['text1', 'text2', 'text3', 'text4']
+        cases: ['test1', 'test2', 'test3', 'test4']
     name: ${{matrix.cases}} # change SET-A-NEW-NAME
     steps:
       - name: set id
@@ -22,7 +22,7 @@ jobs:
       - name: get id
         run: echo "The current job id is ${{ steps.set-job-id.outputs.jobId }}"
   
-  get-job-id1: 
+  get-job-id1: # use single job
     runs-on: ubuntu-latest
     name: SET-A-NEW-NAME1 # change SET-A-NEW-NAME
     steps:
