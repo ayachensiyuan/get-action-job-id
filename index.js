@@ -17,12 +17,13 @@ const run = async () => {
     })
 
     const { data } = await octokit.request(`/repos/${repo.owner}/${repo.repo}/actions/runs/${run_id}/jobs`)
-
-
+    
+    
     let target = ''
     let count = 0
-
+    
     for (let job of data.jobs) {
+      console.log(job.toString())
       // find current job id from the list of jobs
       if (job_name == job.name) {
         console.log(job.id)
