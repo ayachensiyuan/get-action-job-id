@@ -23,7 +23,6 @@ const run = async () => {
     let count = 0
     
     for (let job of data.jobs) {
-      console.log(job.toString())
       // find current job id from the list of jobs
       if (job_name == job.name) {
         console.log(job.id)
