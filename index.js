@@ -20,17 +20,14 @@ const run = async () => {
     })
     // default page size is 30
     for (let page = 1; page <= 3; page++) {
-      const { data } = await octokit.request(`/repos/${repo.owner}/${repo.repo}/actions/runs/${run_id}/jobs`, {
-        page,
-        per_page: 100
-      })
+      const { data } = await octokit.request(`/repos/${repo.owner}/${repo.repo}/actions/runs/${run_id}/jobs?page=${page}&per_page=100`)
 
       let target = ''
       let count = 0
       
       for (const job of data.jobs) {
         // find current job id from the list of jobs
-        if (job_name == job.name) {
+        if (job_name === job.name) {
           console.log(job.id)
           count++
           target = job.id
