@@ -24,6 +24,7 @@ const run = async () => {
 
       let target = ''
       let count = 0
+      console.log(data.total_count)
       
       for (const job of data.jobs) {
         // find current job id from the list of jobs
