@@ -17,7 +17,8 @@ const run = async () => {
     })
     // default page size is 30
     for (let page = 1; page <= 3; page++) {
-      const { data } = await octokit.request(`GET /repos/${repo.owner}/${repo.repo}/actions/runs/${run_id}/jobs?per_page=100&page=${page}`)
+      const { data } = await octokit.request(`GET /repos/${repo.owner}/${repo.repo}/actions/runs/${run_id}/jobs?per_page=10&page=${page}`)
+      console.log(data.total_count)
 
       let target = ''
       let count = 0
