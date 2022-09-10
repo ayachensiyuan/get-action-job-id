@@ -17,7 +17,6 @@ const run = async () => {
     })
     const per_page = 100
     // get total number of jobs
-
     const { data: {total_count} } = await octokit.request(`GET /repos/${repo.owner}/${repo.repo}/actions/runs/${run_id}/jobs`)
     let count = 0
     let target = ''
