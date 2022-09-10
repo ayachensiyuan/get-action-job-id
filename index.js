@@ -2,7 +2,6 @@ const core = require('@actions/core')
 const github = require('@actions/github')
 const { Octokit } = require("@octokit/action")
 const { createActionAuth } = require("@octokit/auth-action")
-const axios = require('axios')
 
 const run = async () => {
   try {
