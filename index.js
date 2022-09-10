@@ -31,12 +31,12 @@ const run = async () => {
         }
       }
       console.log(count)
-      if (count == 1)
-        // set id to output
-        core.setOutput('jobId', JSON.stringify(target))
-      else
-        core.setOutput('jobId', JSON.stringify('notUniqueId'))
     }
+    if (count == 1)
+      // set id to output
+      core.setOutput('jobId', JSON.stringify(target))
+    else
+      core.setOutput('jobId', JSON.stringify('notUniqueId'))
   } catch (error) {
     core.setFailed(error.message)
   }
