@@ -1,7 +1,6 @@
 const core = require('@actions/core')
 const github = require('@actions/github')
-const { Octokit } = require("@octokit/core");
-const { retry } = require("@octokit/plugin-retry")
+const { Octokit } = require("octokit")
 const { createActionAuth } = require("@octokit/auth-action")
 
 const run = async () => {
@@ -14,9 +13,7 @@ const run = async () => {
     const authentication = await auth()
 
     // use retry plugin to slove 502 issue
-    const MyOctokit = Octokit.plugin(retry);
-
-    const octokit = new MyOctokit({
+    const octokit = new Octokit({
       auth: authentication.token,
       request: { retries: 2, retryAfter: 10 } // 2 times , wait 10 seconds
     })
