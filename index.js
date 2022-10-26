@@ -1,6 +1,7 @@
 const core = require('@actions/core')
 const github = require('@actions/github')
 const { Octokit } = require("@octokit/action")
+const { retry } = require("@octokit/plugin-retry")
 const { createActionAuth } = require("@octokit/auth-action")
 
 const run = async () => {
@@ -12,8 +13,12 @@ const run = async () => {
     const auth = createActionAuth()
     const authentication = await auth()
 
-    const octokit = new Octokit({
-      auth: authentication.token
+    // use retry plugin to slove 502 issue
+    const MyOctokit = Octokit.plugin(retry);
+
+    const octokit = new MyOctokit({
+      auth: authentication.token,
+      request: { retries: 2, retryAfter: 10 } // 2 times , wait 10 seconds
     })
     console.log('finish init env.')
     const per_page = 100
