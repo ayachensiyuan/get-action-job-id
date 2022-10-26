@@ -1,6 +1,6 @@
 const core = require('@actions/core')
 const github = require('@actions/github')
-const { Octokit } = require("@octokit/action")
+const { Octokit } = require("@octokit/core");
 const { retry } = require("@octokit/plugin-retry")
 const { createActionAuth } = require("@octokit/auth-action")
 
