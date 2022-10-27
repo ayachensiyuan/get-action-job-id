@@ -4,7 +4,7 @@ const { Octokit } = require("@octokit/core");
 const { retry } = require("@octokit/plugin-retry");
 const { createActionAuth } = require("@octokit/auth-action")
 
-async function getId(run_id, repo, per_page) {
+async function getId(octokit, run_id, repo, per_page, job_name) {
   const { data: { total_count } } = await octokit.request(`GET /repos/${repo.owner}/${repo.repo}/actions/runs/${run_id}/jobs`)
   let count = 0
   let target = ''
@@ -46,7 +46,7 @@ const run = async () => {
     const per_page = 100
     // get total number of jobs
     try {
-      const target = await getId(run_id, repo, per_page)
+      const target = await getId(octokit, run_id, repo, per_page, job_name)
       if (target === -1)
         core.setOutput('jobId', JSON.stringify('notUniqueId'))
       else
@@ -58,7 +58,7 @@ const run = async () => {
         console.log(
           `request failed after ${error.request.request.retryCount} retries`
         );
-        
+
         // try again
         const target = await getId(run_id, repo, per_page)
         if (target === -1)
