@@ -12,7 +12,7 @@ async function getId(octokit, run_id, repo, per_page, job_name) {
   for (let page = 1; page <= Math.floor(total_count / per_page) + 1; page++) {
     const { data } = await octokit.request(`GET /repos/${repo.owner}/${repo.repo}/actions/runs/${run_id}/jobs?per_page=${per_page}&page=${page}`)
     for (const job of data.jobs) {
-      // find current job id from the list of jobs
+      // find current job id from the list of jobs 
       if (job_name === job.name) {
         console.log('find match id is: ', job.id)
         count++
