@@ -1,6 +1,7 @@
 const core = require('@actions/core')
 const github = require('@actions/github')
-const { Octokit } = require("@octokit/action")
+const { Octokit } = require("@octokit/core");
+const { retry } = require("@octokit/plugin-retry");
 const { createActionAuth } = require("@octokit/auth-action")
 
 const run = async () => {
@@ -12,7 +13,8 @@ const run = async () => {
     const auth = createActionAuth()
     const authentication = await auth()
 
-    const octokit = new Octokit({
+    const MyOctokit = Octokit.plugin(retry);
+    const octokit = new MyOctokit({
       auth: authentication.token,
       request: {retry:2 }
     })
