@@ -16,7 +16,7 @@ const run = async () => {
     const MyOctokit = Octokit.plugin(retry);
     const octokit = new MyOctokit({
       auth: authentication.token,
-      request: {retry:2 }
+      request: {retry: 5, retryAfter: 10 }
     })
     console.log('finish init env.')
     const per_page = 100
