@@ -60,7 +60,7 @@ const run = async () => {
         );
 
         // try again
-        const target = await getId(run_id, repo, per_page)
+        const target = await getId(octokit, run_id, repo, per_page, job_name)
         if (target === -1)
           core.setOutput('jobId', JSON.stringify('notUniqueId'))
         else
